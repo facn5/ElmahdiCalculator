@@ -1,86 +1,380 @@
-<h1 style="text-align:center; margin-top:50px;"> hello </h1>
+  <!DOCTYPE html>
 
-<div style="width:40%; margin-right:auto; margin-left:auto;
-margin-top:100px; padding:10px; display:block;
- border-radius:40%; background-color:#4b9d94;
-height:70%; border: 1px black solid">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<div style="height: 350px;margin-top: 20px;/* text-align: center; */margin-right: auto;margin-left: auto;width: 270px;border: 0.1px black solid;">
+  <head>
+
+  <script>
+
+    var lastCharIsSymbol = false;
+    var firstNumb = true;
+    var onlyOneSymbol = false;
 
 
-<button type="button" id="numberOne"
-style="text-align: center;
-    display: inline-block;
-    margin-left: 2%;
-    margin-top: 45px;
-    width: 70px;
-    font-size: 25px;
-    height: 70px;
-    border-radius: 50%;
-    position: relative;"
 
- name="button">1</button>
+  function addNum( num )
+  {
+      if( lastCharIsSymbol )
+      document.getElementById("screen").innerHTML += " " + num;
 
- <button type="button" id="numberOne"
-  style="text-align:center;display:
-   inline-block;margin-left: 6%;margin-top: 40px;
-   width: 70px;font-size: 25px;height: 70px;
-   border-radius: 50%;
-   position: relative;" name="button">2</button>
+  else
+      document.getElementById("screen").innerHTML += num;
 
-   <button type="button" id="numberOne"
+
+      lastCharIsSymbol = false;
+
+  }
+
+  function reset()
+  {
+    document.getElementById("screen").innerHTML = ""
+    onlyOneSymbol = false;
+    lastCharIsSymbol = false;
+  }
+
+  function deleteLastChar()
+  {
+    var text = document.getElementById("screen").innerHTML;
+
+    text = text.slice(0, text.length - 1)
+
+    text = text.replace(/\s/g, "");
+
+
+    document.getElementById("screen").innerHTML = text
+  }
+
+  function plus()
+  {
+    if( !onlyOneSymbol )
+    {
+    if( !lastCharIsSymbol && document.getElementById("screen").innerHTML != "" )
+    document.getElementById("screen").innerHTML += " " + "+";
+
+
+    onlyOneSymbol = true;
+    lastCharIsSymbol = true;
+  }
+  else
+    checkAnswer( '+' );
+
+
+  }
+
+  function minus()
+  {
+      if( !onlyOneSymbol )
+      {
+    if( !lastCharIsSymbol && document.getElementById("screen").innerHTML != "" )
+    {
+    document.getElementById("screen").innerHTML += " " + "-";
+
+  }
+    onlyOneSymbol = true;
+    lastCharIsSymbol = true;
+  }
+  else
+    checkAnswer( '-' );
+  }
+
+    function darb()
+    {
+      if( !onlyOneSymbol )
+      {
+      if( !lastCharIsSymbol && document.getElementById("screen").innerHTML != "" )
+      {
+      document.getElementById("screen").innerHTML += " " + "*";
+
+    }
+
+    onlyOneSymbol = true;
+      lastCharIsSymbol = true;
+    }
+    else
+      checkAnswer( '*' );
+  }
+
+    function qsme()
+    {
+      if( !onlyOneSymbol )
+{
+      if( !lastCharIsSymbol && document.getElementById("screen").innerHTML != "" )
+      {
+      document.getElementById("screen").innerHTML += " " + "/";
+
+    }
+
+    onlyOneSymbol = true;
+      lastCharIsSymbol = true;
+    }
+    else
+      checkAnswer( '/' );
+}
+
+    function tarbe3()
+    {
+      if( !onlyOneSymbol )
+      {
+      if( !lastCharIsSymbol && document.getElementById("screen").innerHTML != "" )
+      {
+        document.getElementById("screen").innerHTML += " " + "^";
+
+    }
+
+      onlyOneSymbol = true;
+      lastCharIsSymbol = true;
+    }
+    else
+      checkAnswer( '^' );
+
+
+  }
+
+  function checkAnswer( index ) {
+    var arr = document.getElementById("screen").innerHTML.split('^');
+
+    if( document.getElementById("screen").innerHTML.indexOf('^') == -1 )
+    var result = eval( document.getElementById("screen").innerHTML );
+    else
+      var result = Math.pow(arr[0],arr[1]);
+
+    document.getElementById("screen").innerHTML = result + " " + index + " ";
+
+
+
+    lastCharIsSymbol = false;
+  }
+
+    </script>
+
+    </head>
+
+  <h1 style="text-align:center; margin-top:50px;"> hello </h1>
+
+
+
+
+  <div style="width:40%; margin-right:auto; margin-left:auto;
+  margin-top:100px; padding:10px; display:block;
+   border-radius:40%; background-size:cover; background-image:  url(https://previews.123rf.com/images/fotoslaz/fotoslaz1505/fotoslaz150500003/40290080-open-air-hot-spring-spa-on-natural-background-in-sunset-time.jpg );
+  height:600px; border: 1px black solid">
+
+  <div style="text-align:center;">
+  <button onclick="tarbe3();" type="button"
+   style="text-align: center;
+  margin-left: 2%;
+  background-size: contain;
+  border: 0.1px black solid;
+  width: 70px;
+  color:white;
+  background-color:black;
+  background-image: url(https://raw.githubusercontent.com/karam1ashqar/ElmahdiCalculator/master/image.png);
+  font-size: 50px;
+  height: 70px;
+  border-radius: 50%;" name="button">^</button>
+  </div>
+
+  <button onclick="plus();" type="button"
+   style="text-align: center;
+      margin-left: 2%;
+      margin-top: 8%;
+      width: 70px;
+      color:white;
+      background-size:contain;
+      border: 0.1px black solid;;
+      background-color:black;
+      background-image: url(https://raw.githubusercontent.com/karam1ashqar/ElmahdiCalculator/master/image.png);
+      font-size: 50px;
+      height: 70px;
+      border-radius: 50%;
+      position: absolute;" name="button">+</button>
+
+      <button onclick="darb();" type="button"
+       style="text-align: center;
+          margin-left: 32%;
+          margin-top: 8%;
+          width: 70px;
+          border: 0.1px black solid;;
+          color:white;
+          background-color:black;
+          background-image: url(https://raw.githubusercontent.com/karam1ashqar/ElmahdiCalculator/master/image.png);
+          font-size: 50px;
+          background-size:contain;
+          height: 70px;
+          border-radius: 50%;
+          position: absolute;" name="button">*</button>
+
+          <button onclick="qsme();" type="button"
+           style="text-align: center;
+              margin-left: 32%;
+              margin-top: 15%;
+              width: 70px;
+              background-size:contain;
+              border: 0.1px black solid;;
+              color:white;
+              background-color:black;
+              background-image: url(https://raw.githubusercontent.com/karam1ashqar/ElmahdiCalculator/master/image.png);
+              font-size: 50px;
+              height: 70px;
+              border-radius: 50%;
+              position: absolute;" name="button">/</button>
+
+      <button onclick="minus();" type="button"
+       style="text-align: center;
+      margin-left: 2%;
+      margin-top: 15%;
+      width: 70px;
+      color:white;
+      background-size:contain;
+      border: 0.1px black solid;;
+      background-color:black;
+      background-image: url(https://raw.githubusercontent.com/karam1ashqar/ElmahdiCalculator/master/image.png);
+      font-size: 50px;
+      height: 70px;
+      border-radius: 50%;
+      position: absolute;" name="button">-</button>
+
+  <div style="margin-top: 20px;
+  margin-right: auto;margin-left: auto; padding:10px;
+  width: 270px;
+  border: 7px #0015fb dotted;">
+
+
+  <div>
+
+  <button onclick="addNum(1);" type="button"
+  style="text-align: center;
+      display: inline-block;
+      margin-left: 2%;
+      margin-top: 10px;
+      width: 70px;
+      font-size: 25px;
+      height: 70px;
+      border-radius: 50%;
+      position: relative;"
+
+   name="button">1</button>
+
+   <button onclick="addNum(2);" type="button"
     style="text-align:center;display:
-     inline-block;margin-left: 6%;margin-top: 40px;
+     inline-block;margin-left: 6%;margin-top: 10px;
      width: 70px;font-size: 25px;height: 70px;
      border-radius: 50%;
-     position: relative;" name="button">3</button>
+     position: relative;" name="button">2</button>
 
-<br>
-     <button type="button" id="numberOne"
+     <button onclick="addNum(3);" type="button" id="numberOne"
       style="text-align:center;display:
-       inline-block;margin-left: 2%;margin-top: 40px;
+       inline-block;margin-left: 6%;margin-top: 10px;
        width: 70px;font-size: 25px;height: 70px;
        border-radius: 50%;
-       position: relative;" name="button">4</button>
+       position: relative;" name="button">3</button>
 
-       <button type="button" id="numberOne"
+  </div>
+  <div>
+       <button onclick="addNum(4);" type="button"
         style="text-align:center;display:
-         inline-block;margin-left: 6%;margin-top: 40px;
-         width: 70px;font-size: 25px;height: 50px;
+         inline-block;margin-left: 2%;margin-top: 10px;
+         width: 70px;font-size: 25px;height: 70px;
          border-radius: 50%;
-         position: relative;" name="button">5</button>
+         position: relative;" name="button">4</button>
 
-         <button type="button" id="numberOne"
+         <button onclick="addNum(5);" type="button" id="numberOne"
           style="text-align:center;display:
-           inline-block;margin-left: 6%;margin-top: 40px;
-           width: 70px;font-size: 25px;height: 70px;
+           inline-block;margin-left: 6%;margin-top: 10px;
+           width: 70px;font-size: 25px;height: 50px;
            border-radius: 50%;
-           position: relative;" name="button">6</button>
+           position: relative;" name="button">5</button>
 
-<br>
-
-<button type="button" id="numberOne"
- style="text-align:center;display:
-  inline-block;margin-left: 2%;margin-top: 40px;
-  width: 70px;font-size: 25px;height: 70px;
-  border-radius: 50%;
-  position: relative;" name="button">7</button>
-
-  <button type="button" id="numberOne"
+           <button onclick="addNum(6);" type="button" id="numberOne"
+            style="text-align:center;display:
+             inline-block;margin-left: 6%;margin-top: 10px;
+             width: 70px;font-size: 25px;height: 70px;
+             border-radius: 50%;
+             position: relative;" name="button">6</button>
+  </div>
+  <div>
+  <button onclick="addNum(7);" type="button" id="numberOne"
    style="text-align:center;display:
-    inline-block;margin-left: 6%;margin-top: 40px;
+    inline-block;margin-left: 2%;margin-top: 10px;
     width: 70px;font-size: 25px;height: 70px;
     border-radius: 50%;
-    position: relative;" name="button">8</button>
+    position: relative;" name="button">7</button>
 
-    <button type="button" id="numberOne"
+    <button onclick="addNum(8);" type="button" id="numberOne"
      style="text-align:center;display:
-      inline-block;margin-left: 6%;margin-top: 40px;
+      inline-block;margin-left: 6%;margin-top: 10px;
       width: 70px;font-size: 25px;height: 70px;
       border-radius: 50%;
-      position: relative;" name="button">9</button>
+      position: relative;" name="button">8</button>
 
+      <button onclick="addNum(9);" type="button" id="numberOne"
+       style="text-align:center;display:
+        inline-block;margin-left: 6%;margin-top: 10px;
+        width: 70px;font-size: 25px;height: 70px;
+        border-radius: 50%;
+        position: relative;" name="button">9</button>
+
+  </div>
+    </div>
+
+    <div style="text-align: center;
+      background-color: #b2bb83;
+      border-radius: 30px;
+      width: 55%;
+      margin-left: auto;
+      margin-right: auto;
+  ">
+
+  <button type="button"
+  style="float:right; background-color:red;
+  margin-top:15px;
+  margin-right:5%;
+   color:white; border:none; padding:2px;" name="button" onclick="self.close();">click me</button>
+
+  <h3 id="screen" style="padding: 12px;
+      border-radius: 30px; height:20px;
+      border: 4px #000000 solid;">
+      </h3>
+
+      </div>
+
+  <div style="text-align: center;">
+      <button onclick="addNum(0);" type="button" id="numberOne"
+       style="text-align: center;
+      display: inline-block;
+      width: 70px;
+      font-size: 25px;
+      height: 70px;
+      border-radius: 50%;
+      position: relative;"" name="button">0</button>
+
+      <div style="margin-top:10px; text-align: center;">
+        <button onclick="reset();" type="button" id="numberOne"
+         style="text-align: center;
+        display: inline-block;
+        width: 70px;
+        color:white;
+        background-color:black;
+        background-image: url(https://raw.githubusercontent.com/karam1ashqar/ElmahdiCalculator/master/image.png);
+        font-size: 25px;
+        background-size:contain;
+        height: 70px;
+        border-radius: 50%;
+        position: relative;"" name="button">C</button>
+
+          <button onclick="deleteLastChar();" type="button" id="numberOne"
+           style="text-align: center;
+          display: inline-block;
+          color:white;
+          background-color:black;
+          background-image: url(https://raw.githubusercontent.com/karam1ashqar/ElmahdiCalculator/master/image.png);
+          font-size: 25px;
+          background-size:contain;
+          width: 70px;
+          height: 70px;
+          border-radius: 50%;
+          position: relative;"" name="button">CE</button>
 
   </div>
 
-  </div>
+    </div>
