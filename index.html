@@ -5,188 +5,24 @@
 <head>
   <link rel="stylesheet" type="text/css" href="styles.css">
 
-<script>
-
-  var lastCharIsSymbol = false;
-  var firstNumb = true;
-  var onlyOneSymbol = false;
-
-
-function addNum( num )
-{
-    if( lastCharIsSymbol )
-    document.getElementById("screen").innerHTML += " " + num;
-
-else
-    document.getElementById("screen").innerHTML += num;
-
-
-    lastCharIsSymbol = false;
-
-}
-
-function reset()
-{
-  document.getElementById("screen").innerHTML = ""
-  onlyOneSymbol = false;
-  lastCharIsSymbol = false;
-}
-
-function deleteLastChar()
-{
-  var text = document.getElementById("screen").innerHTML;
-
-  text = text.slice(0, text.length - 1)
-
-  text = text.replace(/\s/g, "");
-
-
-  document.getElementById("screen").innerHTML = text
-}
-
-function plus()
-{
-  if( !onlyOneSymbol )
-  {
-  if( !lastCharIsSymbol && document.getElementById("screen").innerHTML != "" )
-  document.getElementById("screen").innerHTML += " " + "+";
-
-
-  onlyOneSymbol = true;
-  lastCharIsSymbol = true;
-}
-else
-  checkAnswer( '+' );
-
-
-}
-
-function QawsYasar()
-{
-document.getElementById("screen").innerHTML += " " + "(";
-}
-
-function QawsYamen()
-{
-document.getElementById("screen").innerHTML += " " + ")";
-
-}
-
-function minus()
-{
-    if( !onlyOneSymbol )
-    {
-  if( !lastCharIsSymbol && document.getElementById("screen").innerHTML != "" )
-  {
-  document.getElementById("screen").innerHTML += " " + "-";
-
-}
-  onlyOneSymbol = true;
-  lastCharIsSymbol = true;
-}
-else
-  checkAnswer( '-' );
-}
-
-function darb()
-{
-    if( !onlyOneSymbol )
-    {
-  if( !lastCharIsSymbol && document.getElementById("screen").innerHTML != "" )
-  {
-  document.getElementById("screen").innerHTML += " " + "*";
-
-}
-  onlyOneSymbol = true;
-  lastCharIsSymbol = true;
-}
-else
-  checkAnswer( '*' );
-}
-
-  function qsme()
-  {
-    if( !onlyOneSymbol )
-{
-    if( !lastCharIsSymbol && document.getElementById("screen").innerHTML != "" )
-    {
-    document.getElementById("screen").innerHTML += " " + "/";
-
-  }
-
-  onlyOneSymbol = true;
-    lastCharIsSymbol = true;
-  }
-  else
-    checkAnswer( '/' );
-}
-
-  function tarbe3()
-  {
-    if( !onlyOneSymbol )
-    {
-    if( !lastCharIsSymbol && document.getElementById("screen").innerHTML != "" )
-    {
-      document.getElementById("screen").innerHTML += " " + "^";
-
-  }
-
-    onlyOneSymbol = true;
-    lastCharIsSymbol = true;
-  }
-  else
-    checkAnswer( '^' );
-
-
-}
-
-function checkAnswer( index ) {
-
-
-  if( document.getElementById("screen").innerHTML.indexOf('^') == -1 )
-  var result = eval( document.getElementById("screen").innerHTML );
-  else
-  {
-    var arr = document.getElementById("screen").innerHTML.split('^');
-    var result = Math.pow(arr[0],arr[1]);
-  }
-if( !isNaN(result) )
-{
-  if( index != null)
-  document.getElementById("screen").innerHTML = result + " " + index + " ";
-
-  else
-  {
-  document.getElementById("screen").innerHTML = result;
-  onlyOneSymbol = false;
-}
-
-
-  lastCharIsSymbol = false;
-}
-
-}
-
-  </script>
+<script src="functions.js"> </script>
 
   </head>
 
-<h1 style="text-align:center; margin-top:50px;"> hello </h1>
-
-
-
+<h1 class="title"> El mahdi Calculator</h1>
 
 <div class="ElmahdiCalculator">
 
-<div style="text-align:center;">
+<div class="bottom">
+
 <button onclick="tarbe3();" type="button" class="multiplyOp" name="button">^</button>
 <button onclick="checkAnswer( null );" type="button" class="equalOp">=</button>
+
 </div>
 
 <div class="column" style="float:right;">
 
     <button onclick="darb();" type="button" class="darbBtn" >*</button>
-
     <button onclick="qsme();" type="button" class="qsmeBtn" name="button">/</button>
 
 </div>
@@ -200,29 +36,22 @@ if( !isNaN(result) )
 </div>
 
 <div class="numsDiv">
-
-
 <div>
 
 <button onclick="addNum(1);" type="button" id="numBtn" name="button">1</button>
-
  <button onclick="addNum(2);" type="button" id="numBtn" name="button">2</button>
-
    <button onclick="addNum(3);" type="button" id="numBtn"name="button">3</button>
 
 </div>
 <div>
      <button onclick="addNum(4);" type="button" id="numBtn" name="button">4</button>
-
        <button onclick="addNum(5);" type="button" id="numBtn" style="height:50px !important;" name="button">5</button>
-
          <button onclick="addNum(6);" type="button" id="numBtn" name="button">6</button>
 </div>
 <div>
+
 <button onclick="addNum(7);" type="button" id="numBtn" name="button">7</button>
-
   <button onclick="addNum(8);" type="button" id="numBtn"name="button">8</button>
-
     <button onclick="addNum(9);" type="button"id="numBtn" name="button">9</button>
 
 </div>
@@ -234,17 +63,14 @@ if( !isNaN(result) )
 
 <h3 id="screen">
     </h3>
-
     </div>
 
 <div class="bottom">
     <button onclick="addNum(0);" type="button" id="zeroNumBtn" name="button">0</button>
 
-    <div style="margin-top:10px; text-align: center;">
+    <div class="bottom2">
       <button onclick="reset();" type="button" class="resetBtn" name="button">C</button>
-
         <button onclick="deleteLastChar();" type="button" class="deleteLastCharBtn" name="button">CE</button>
 
 </div>
-
   </div>
