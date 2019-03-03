@@ -1,76 +1,80 @@
 <!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<html lang="eng">
-<title>El mahdi Calculator</title>
-<head>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-
+<link rel="stylesheet" type="text/css" href="styles.css">
 <script src="functions.js"> </script>
 
-  </head>
+<html lang="eng">
 
-<h1 class="title"> El mahdi Calculator</h1>
+<head>
+  <title>El mahdi Calculator</title>
+</head>
 
-<div class="ElmahdiCalculator">
+<body>
+  <h1 class="title"> El mahdi Calculator</h1>
 
-<div class="bottom">
+  <div class="ElmahdiCalculator">
 
-<button onclick="tarbe3();" type="button" class="multiplyOp" name="button">^</button>
-<button onclick="checkAnswer( null );" type="button" class="equalOp">=</button>
+    <div class="bottom">
 
-</div>
+      <button onclick="tarbe3();" type="button" class="multiplyOp" name="button">^</button>
+      <button onclick="checkAnswer( null );" type="button" class="equalOp">=</button>
 
-<div class="column" style="float:right;">
-
-    <button onclick="darb();" type="button" class="darbBtn" >*</button>
-    <button onclick="qsme();" type="button" class="qsmeBtn" name="button">/</button>
-
-</div>
-
-<div class="column">
-
-    <button onclick="plus();" type="button"class="plusBtn" name="button">+</button>
-
-    <button onclick="minus();" type="button" class="minusBtn" name="button">-</button>
-
-</div>
-
-<div class="numsDiv">
-<div>
-
-<button onclick="addNum(1);" type="button" id="numBtn" name="button">1</button>
- <button onclick="addNum(2);" type="button" id="numBtn" name="button">2</button>
-   <button onclick="addNum(3);" type="button" id="numBtn"name="button">3</button>
-
-</div>
-<div>
-     <button onclick="addNum(4);" type="button" id="numBtn" name="button">4</button>
-       <button onclick="addNum(5);" type="button" id="numBtn" style="height:50px !important;" name="button">5</button>
-         <button onclick="addNum(6);" type="button" id="numBtn" name="button">6</button>
-</div>
-<div>
-
-<button onclick="addNum(7);" type="button" id="numBtn" name="button">7</button>
-  <button onclick="addNum(8);" type="button" id="numBtn"name="button">8</button>
-    <button onclick="addNum(9);" type="button"id="numBtn" name="button">9</button>
-
-</div>
-  </div>
-
-  <div class="screenTextField">
-
-<button type="button" class="clickmeBtn" name="button" onclick="window.close();">click me</button>
-
-<h3 id="screen">
-    </h3>
     </div>
 
-<div class="bottom">
-    <button onclick="addNum(0);" type="button" id="zeroNumBtn" name="button">0</button>
+    <div class="column" style="float:right;">
 
-    <div class="bottom2">
-      <button onclick="reset();" type="button" class="resetBtn" name="button">C</button>
+      <button onclick="darb();" type="button" class="darbBtn">*</button>
+      <button onclick="qsme();" type="button" class="qsmeBtn" name="button">/</button>
+
+    </div>
+
+    <div class="column">
+
+      <button onclick="plus();" type="button" class="plusBtn" name="button">+</button>
+
+      <button onclick="minus();" type="button" class="minusBtn" name="button">-</button>
+
+    </div>
+
+    <div class="numsDiv">
+      <div>
+
+        <button onclick="addNum(1);" type="button" id="numBtn" name="button">1</button>
+        <button onclick="addNum(2);" type="button" id="numBtn" name="button">2</button>
+        <button onclick="addNum(3);" type="button" id="numBtn" name="button">3</button>
+
+      </div>
+      <div>
+        <button onclick="addNum(4);" type="button" id="numBtn" name="button">4</button>
+        <button onclick="addNum(5);" type="button" id="numBtn" style="height:50px !important;" name="button">5</button>
+        <button onclick="addNum(6);" type="button" id="numBtn" name="button">6</button>
+      </div>
+      <div>
+
+        <button onclick="addNum(7);" type="button" id="numBtn" name="button">7</button>
+        <button onclick="addNum(8);" type="button" id="numBtn" name="button">8</button>
+        <button onclick="addNum(9);" type="button" id="numBtn" name="button">9</button>
+
+      </div>
+    </div>
+
+    <div class="screenTextField">
+
+      <button type="button" class="clickmeBtn" name="button" onclick="window.close();">click me</button>
+
+      <h3 id="screen">
+      </h3>
+    </div>
+
+    <div class="bottom">
+      <button onclick="addNum(0);" type="button" id="zeroNumBtn" name="button">0</button>
+
+      <div class="bottom2">
+        <button onclick="reset();" type="button" class="resetBtn" name="button">C</button>
         <button onclick="deleteLastChar();" type="button" class="deleteLastCharBtn" name="button">CE</button>
 
-</div>
-  </div>
+      </div>
+    </div>
+</body>
+
+</html>
