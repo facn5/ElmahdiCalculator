@@ -244,7 +244,7 @@
   transform: scale(0.9);
 }
 
-#numBtn {
+.numBtn {
   border: 1px black solid;
   cursor:pointer;
   background-color:#C39057;
