@@ -3,7 +3,7 @@
 
 
 @media screen and (max-width: 517px) {
-  #numBtn, #zeroNumBtn, .plusBtn, .deleteLastCharBtn, .resetBtn, .minusBtn, .multiplyOp, .equalOp, .qsmeBtn, .darbBtn { zoom:0.6 !important; }
+  .numBtn, .zeroNumBtn, .plusBtn, .deleteLastCharBtn, .resetBtn, .minusBtn, .multiplyOp, .equalOp, .qsmeBtn, .darbBtn { zoom:0.6 !important; }
   .numsDiv { width:170px !important; }
   .screenTextField { zoom: 0.75; }
 }
@@ -205,7 +205,7 @@
   transform: scale(0.8);
 }
 
-#numBtn:after, #zeroNumBtn:after {
+.numBtn:after, .zeroNumBtn:after {
   content: "";
   background: #7bc2f4;
   display: block;
@@ -218,14 +218,14 @@
   transition: all 0.8s
 }
 
-#numBtn:active:after, #zeroNumBtn:active:after {
+.numBtn:active:after, .zeroNumBtn:active:after {
   padding: 0;
   margin: 0;
   opacity: 1;
   transition: 0s
 }
 
-#zeroNumBtn {
+.zeroNumBtn {
   display: inline-block;
   cursor:pointer;
   width: 70px;
@@ -239,7 +239,7 @@
 
 }
 
-#numBtn:hover, #zeroNumBtn:hover {
+.numBtn:hover, .zeroNumBtn:hover {
   background-image:linear-gradient( orange, brown );
   transform: scale(0.9);
 }
